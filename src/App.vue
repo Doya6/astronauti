@@ -1,32 +1,52 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-main>
+      <Home />
+    </v-main>
+  </v-app>
 </template>
+
+<script>
+import Home from "@/views/Home.vue";
+
+export default {
+  name: "App",
+  components: {
+    Home,
+  },
+  data: () => ({}),
+};
+</script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: black;
 }
 
-#nav {
-  padding: 30px;
+html {
+  box-sizing: border-box;
+  background: linear-gradient(rgb(0, 0, 114), rgb(0, 0, 216));
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+*,
+::after,
+::before {
+  box-sizing: inherit;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.v-main {
+  background: url(assets/sky.jpeg) no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+body {
+  text-rendering: optimizeLegibility;
+  max-width: 992px;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
